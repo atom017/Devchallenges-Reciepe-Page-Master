@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root{
+    --black: #000000;
+    --light-black: #333333;
+    --gray-2: #4F4F4F;
+    --gray-3: #a9a9a9;
+    --gray-4: #bdbdbd;
+    --orange: #F2994A;
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0; 
+    font-family: "Montserrat" , sans-serif;  
+}
+
+.whole-body{
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+   
+    position: relative;
+}
+
+/*header*/
+header .subtitle{
+    display: flex;   
+}
+
+header h1{
+    font-size: 48px;
+    line-height: 64px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;  
+}
+
+.subtitle p{
+    margin-left: 12px;
+    color: var(--gray-2);
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    width: 58%;
+    margin-top: 20px;
+    
+}
+
+.subtitle img{
+   margin-bottom: 20px;  
+}
+
+/***Main***/
+.main-img img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+main .holder{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: space-between;
+     
+}
+
+/**Main --> Ingredientss**/
+.all-reciepes{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+   
+}
+
+.all-reciepes .reciepe{
+    margin-bottom: 10px;
+}
+
+.all-reciepes .reciepe input{
+    margin: 0;
+    padding:0;
+}
+
+.all-reciepes .graham-items,.all-reciepes .cheecake-items{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.all-reciepes .reciepe{
+    display: block;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+}
+.all-reciepes .reciepe input[type = "checkbox"]{
+    margin-left: -20px;
+    margin-right: 10px;
+}
+
+/**Main --> Card**/
+
+.card{
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 50px 50px 30px 40px;
+    height: 80%;
+    width: 30%;
+
+}
+.card .tool{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.card .tool .card-text{
+    width: 100%;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.card .tool:first-child i:first-child{
+    font-size: 36px;
+    color: var(--orange);
+}
+
+.card .tool:first-child p:nth-child(2){
+    color: var(--orange);
+}
+
+.card .tool .card-text > p{
+    font-size: 14px;
+    margin:0;
+}
+.card .tool .card-text p:nth-child(1){
+    font-weight: bold;
+    color: var(--gray-4);
+    
+}
+.card .tool .card-text p:nth-child(2){
+    font-weight: 500;
+}
+
+/*Main --> Instructions*/
+.instructions{
+    width: 65%;
+}
+.instructions .instruction{
+   margin-bottom: 30px;
+   
+}
+
+.instruction .rectangle{
+    background-color: var(--orange);
+    height: 36px;
+    width: 36px;
+    position: absolute;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 6px;
+   
+}
+
+.instruction p{
+    margin-left: 50px;
+    color: var(--light-black);
+    font-size: 16px;
+    line-height: 150%;
+}
+
+#link{
+    text-decoration: none;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--gray-4);
+    margin: 40px 0;
+}
+
+footer{
+    color: var(--gray-3);
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 900px){
+    .all-reciepes,.instructions{
+        width: 90%;
+    }
+    header .subtitle p{
+       min-width: 90%;
+    }
+
+    header h1{
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+@media(max-width: 768px){
+    .whole-body{
+        min-width: 90%;
+    }
+    main .holder{
+        flex-direction: column-reverse;
+    }
+
+    .all-reciepes,.instructions{
+        width: 100%;
+    }
+
+    main .card {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 2;
+        box-shadow: 0;
+        height: auto;
+        width: auto;
+    }
+
+    .card .tool:not(:first-child){
+        grid-row: 2;
+    }
+}
+
+@media(max-width: 600px){
+    .whole-body{
+        margin-left:10px;
+    }  
+}
+
+@media(max-width: 1200){
+    .whole-body{
+        width: 70%;
+    }
+}
